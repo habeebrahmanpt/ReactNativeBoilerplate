@@ -2,6 +2,7 @@ import React from 'react'
 import { Dimensions } from 'react-native'
 import { createStackNavigator } from 'react-navigation'
 import HomeScreen from '../src/HomeScreen'
+import TestPage from '../src/TestPage'
 
 // drawer stack
 // const DrawerStack = DrawerNavigator({
@@ -20,7 +21,8 @@ import HomeScreen from '../src/HomeScreen'
 //   })
 
 const PrimaryNav = createStackNavigator({
-  HomeScreen: { screen: HomeScreen }
+  HomeScreen: { screen: HomeScreen },
+  TestPage: { screen: TestPage },
 }, {
     // Default config for all screens
     headerMode: 'none',

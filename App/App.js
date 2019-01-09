@@ -4,6 +4,7 @@ import { Platform, StyleSheet, Text, View } from 'react-native';
 import { Provider, connect } from 'react-redux';
 import createStore from './Redux'
 import RootContainer from './RootContainer';
+import ReduxNavigation from './Navigation/ReduxNavigation';
 /**
 * Sample React Native App
 * https://github.com/facebook/react-native
@@ -34,9 +35,10 @@ const styles = StyleSheet.create({
 export default class App extends Component {
   render() {
     return (
-      <Provider store={store} >
-        <RootContainer />
-      </Provider>
+      // <Provider store={store} >
+      //   {/* <RootContainer /> */}
+        <ReduxNavigation />
+      // </Provider>
     )
   }
 }

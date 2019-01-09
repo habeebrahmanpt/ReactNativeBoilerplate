@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import {
-    View, StyleSheet, Platform, TouchableOpacity,
+    View, StyleSheet, TouchableOpacity,
     NetInfo, Text
 } from 'react-native'
 import { connect } from 'react-redux'
@@ -17,15 +17,26 @@ import { connect } from 'react-redux'
  * ******************* 
  * 
  */
-class HomeSrceen extends Component {
+class TestPage extends Component {
 
 
-    constructor(props) {
+    constructor(props: homeSrceen) {
         super(props)
         this.state = {
 
         }
     }
+
+
+    componentDidMount() {
+
+
+        // if (!ReduxPersist.active) {
+        //     this.props.startup()
+        // }
+    }
+
+
 
     /**
       *   Navigate to Add Activity Page 
@@ -33,8 +44,10 @@ class HomeSrceen extends Component {
       * @param {Object} parms 
       */
     handlenavigateToActivity(parms) {
-        this.props.navigation.navigate('TestPage', parms)
+        this.props.navigation.goBack()
     }
+
+
 
 
     render() {
@@ -42,10 +55,8 @@ class HomeSrceen extends Component {
             <View style={styles.container}>
                 <TouchableOpacity
                     onPress={this.handlenavigateToActivity.bind(this, {})}>
-
-                    <Text style={styles.welcome}>Welcome to React Native!</Text>
+                    <Text style={styles.welcome}>Welcome to React Native! test</Text>
                     <Text style={styles.instructions}>To get started, edit App.js</Text>
-
                 </TouchableOpacity>
             </View>
         );
@@ -73,4 +84,4 @@ const styles = StyleSheet.create({
 });
 
 
-export default HomeSrceen
+export default TestPage
