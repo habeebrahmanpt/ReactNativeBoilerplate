@@ -40,6 +40,7 @@ class HomeSrceen extends Component {
     render() {
         return (
             <View style={styles.container}>
+        
                 <TouchableOpacity
                     onPress={this.handlenavigateToActivity.bind(this, {})}>
 

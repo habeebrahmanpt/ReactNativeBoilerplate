@@ -2,7 +2,8 @@
 // import * as ReactNavigation from 'react-navigation'
 // // import { addNavigationHelpers } from 'react-navigation'
 // import { connect } from 'react-redux'
-// import { BackHandler, Alert } from 'react-native'
+import { BackHandler, Alert } from 'react-native'
+import { NavigationActions } from "react-navigation";
 import AppNavigator from './AppNavigation'
 // import {
 //   reduxifyNavigator,
@@ -106,12 +107,41 @@ const store = createStore(
   applyMiddleware(middleware),
 );
 
-export default class ReduxNavigation extends React.Component {
+
+class ReduxNavigation extends React.Component {
+  constructor(props) {
+    super(props)
+
+  }
+
+  componentDidMount() {
+    BackHandler.addEventListener("hardwareBackPress", this.onBackPress);
+  }
+
+  componentWillUnmount() {
+    BackHandler.removeEventListener("hardwareBackPress", this.onBackPress);
+  }
+
+  onBackPress = () => {
+
+    console.log("ddddddddddddd", this.props)
+    const { dispatch, nav } = this.props;
+    if (nav && nav.index === 0) {
+      return false;
+    }
+
+    // dispatch(NavigationActions.back());
+    return true;
+  };
   render() {
     return (
       <Provider store={store}>
-        <AppWithNavigationState />
+        <AppWithNavigationState navigation={{
+          dispatch: this.props.dispatch,
+          state: this.props.nav
+        }} />
       </Provider>
     );
   }
 }
+export default ReduxNavigation;

@@ -1,9 +1,9 @@
 import React, { Component } from 'react'
-import {View, StyleSheet, Text} from 'react-native'
+import { View, StyleSheet, Text } from 'react-native'
 import { connect } from 'react-redux'
 
 import ReduxNavigation from './Navigation/ReduxNavigation'
- 
+
 /**
  * 
  * ******************* 
@@ -47,9 +47,9 @@ class RootContainer extends Component {
 
     componentDidMount() {
 
- 
+
     }
-    
+
 
     componentWillMount() {
 
@@ -57,15 +57,15 @@ class RootContainer extends Component {
     }
 
     componentWillUnmount() {
-     
+
     }
 
     render() {
         return (
             <View style={styles.container}>
-                
-            <ReduxNavigation />
-            
+
+                <ReduxNavigation />
+
             </View>
         );
     }
@@ -74,7 +74,8 @@ class RootContainer extends Component {
 // wraps dispatch to create nicer functions to call within our component
 const mapDispatchToProps = (dispatch) => ({
     startup: () => dispatch(StartupActions.startup())
-  })
-  
+})
 
-  export default connect(null, mapDispatchToProps)(RootContainer)
+
+//   export default connect(null, mapDispatchToProps)(RootContainer)
+export default RootContainer
