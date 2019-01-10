@@ -1,26 +1,9 @@
 
 import React, { Component } from 'react';
-import RootContainer from './RootContainer';
-import AppNavigation from './Navigation/AppNavigation'
-
-import { AppRegistry } from 'react-native';
+import RootContainer from './RootContainer'; 
 import { Provider } from 'react-redux';
-
-import { createStore, applyMiddleware, combineReducers, } from 'redux';
-import {
-  createNavigationReducer,
-} from 'react-navigation-redux-helpers';
-import { AppNavigator, middleware } from './Navigation/ReduxNavigation';
-const navReducer = createNavigationReducer(AppNavigation);
-
-
-const appReducer = combineReducers({
-  // nav: navReducer
-  nav: require('./Redux/NavigationRedux').reducer,
-
-});
-
-const store = createStore(appReducer, applyMiddleware(middleware));
+import createStore from './Redux'
+ 
 
 /**
 * Sample React Native App
@@ -29,15 +12,14 @@ const store = createStore(appReducer, applyMiddleware(middleware));
 * @format
 * @flow
 */
-// const store = createStore()
+const store = createStore()
 
 
 export default class App extends Component {
   render() {
 
     return (
-      <Provider store={store}>
-        {/* <AppNavigator /> */}
+      <Provider store={store}> 
         <RootContainer />
       </Provider>
     );

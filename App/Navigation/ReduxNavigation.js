@@ -1,5 +1,4 @@
-import React, { PureComponent } from 'react';
-import PropTypes from 'prop-types';
+import React, { PureComponent } from 'react'; 
 import { connect } from 'react-redux';
 import { NavigationActions } from "react-navigation";
 import { BackHandler, Alert } from 'react-native'
@@ -10,7 +9,7 @@ import {
 
 import RootNavigator from './AppNavigation'
 
-const middleware = createReactNavigationReduxMiddleware(
+const navigationMiddleware = createReactNavigationReduxMiddleware(
     'root',
     state => state.nav
 );
@@ -70,4 +69,4 @@ const mapNavStateProps = state => ({
 const AppNavigator = connect(mapNavStateProps)(ReduxNavigation);
 
 
-export { RootNavigator, AppNavigator, middleware };
+export { RootNavigator, AppNavigator, navigationMiddleware };

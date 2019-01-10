@@ -1,16 +1,14 @@
 import React from 'react'
 import { Dimensions } from 'react-native'
-import { createStackNavigator } from 'react-navigation'
+import { createStackNavigator, createDrawerNavigator } from 'react-navigation'
 
 import HomeScreen from '../src/HomeScreen'
 import TestPage from '../src/TestPage'
 
 // drawer stack
-// const DrawerStack = DrawerNavigator({
+// const DrawerStack = createDrawerNavigator({
 //   HomeScreen: { screen: HomeScreen },
-//   SalesScreen: { screen: SalesScreen },
-//   RecruitementScreen: { screen: RecruitementScreen },
-//   SettingsScreen: { screen: SettingsScreen },
+//   TestPage: { screen: TestPage } 
 // }, {
 //     initialRouteName: 'HomeScreen',
 //     drawerWidth: Dimensions.get('window').width / 1.3,
