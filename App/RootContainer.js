@@ -1,9 +1,7 @@
 import React, { Component } from 'react'
 import { View, StyleSheet, Text } from 'react-native'
-import { connect } from 'react-redux'
-
-import ReduxNavigation from './Navigation/ReduxNavigation'
-
+import { Provider, connect } from 'react-redux';
+import { AppNavigator, middleware } from './Navigation/ReduxNavigation'
 /**
  * 
  * ******************* 
@@ -15,29 +13,11 @@ import ReduxNavigation from './Navigation/ReduxNavigation'
  */
 
 
-const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        justifyContent: 'center',
-        alignItems: 'center',
-        backgroundColor: '#F5FCFF',
-    },
-    welcome: {
-        fontSize: 20,
-        textAlign: 'center',
-        margin: 10,
-    },
-    instructions: {
-        textAlign: 'center',
-        color: '#333333',
-        marginBottom: 5,
-    },
-});
-
+ 
 class RootContainer extends Component {
 
-    api: Object
-    constructor(props: RootContainer) {
+
+    constructor(props) {
         super(props)
         this.state = {
 
@@ -45,37 +25,17 @@ class RootContainer extends Component {
     }
 
 
-    componentDidMount() {
-
-
-    }
-
-
-    componentWillMount() {
-
-
-    }
-
-    componentWillUnmount() {
-
-    }
-
+    
     render() {
         return (
-            <View style={styles.container}>
-
-                <ReduxNavigation />
-
+            <View style={{ flex: 1 }}>
+                <AppNavigator />
             </View>
         );
     }
 }
+const mapNavStateProps = state => ({
+    state: state.nav
+});
+export default connect(null, mapNavStateProps)(RootContainer)
 
-// wraps dispatch to create nicer functions to call within our component
-const mapDispatchToProps = (dispatch) => ({
-    startup: () => dispatch(StartupActions.startup())
-})
-
-
-//   export default connect(null, mapDispatchToProps)(RootContainer)
-export default RootContainer
