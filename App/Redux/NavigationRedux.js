@@ -8,6 +8,8 @@ const prevGetStateForAction = AppNavigation.router.getStateForAction;
 AppNavigation.router = {
   ...AppNavigation.router,
   getStateForAction(action, state, count) {
+
+    console.log("dddddddddd", "ddddddddddddddddddddddddd")
     if (state && action.type === 'ReplaceCurrentScreen') {
       const routes = state.routes.slice(0, state.routes.length - (count) ? count : 1);
       routes.push(action)

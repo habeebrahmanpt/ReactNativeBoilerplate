@@ -5,18 +5,23 @@ import AppNavigation from './Navigation/AppNavigation'
 
 import { AppRegistry } from 'react-native';
 import { Provider } from 'react-redux';
+
 import { createStore, applyMiddleware, combineReducers, } from 'redux';
 import {
   createNavigationReducer,
 } from 'react-navigation-redux-helpers';
+import { AppNavigator, middleware } from './Navigation/ReduxNavigation';
 const navReducer = createNavigationReducer(AppNavigation);
+
+
 const appReducer = combineReducers({
-  nav: navReducer
+  // nav: navReducer
+  nav: require('./Redux/NavigationRedux').reducer,
 
 });
 
 const store = createStore(appReducer, applyMiddleware(middleware));
-import { AppNavigator, middleware } from './Navigation/ReduxNavigation';
+
 /**
 * Sample React Native App
 * https://github.com/facebook/react-native
