@@ -1,4 +1,4 @@
-#  # React Native Template Project 
+#  #Redux + Reactnavigation + React   React Native Template Project 
 
 We found out and combined the patterns and libraries to make a robust app that works properly on both platforms: Android and iOS.
 
