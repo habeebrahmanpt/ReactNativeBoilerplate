@@ -1,11 +1,12 @@
 import { combineReducers } from 'redux'
 import { persistReducer } from 'redux-persist'
-import createStore from './CreateStore' 
+import createStore from './CreateStore'
 import ReduxPersist from '../Config/ReduxPersist'
-
+import counterReducer from './Reducers/CounterReducer'
 /* ------------- Assemble The Reducers ------------- */
 export const reducers = combineReducers({
   nav: require('./NavigationRedux').reducer,
+  counterReducer: counterReducer,
 })
 
 export default () => {

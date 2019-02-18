@@ -1,9 +1,10 @@
 import { createStore, applyMiddleware, compose } from 'redux'
-import { navigationMiddleware } from '../Navigation/ReduxNavigation'; 
+import { navigationMiddleware } from '../Navigation/ReduxNavigation';
 import ScreenTracking from './ScreenTrackingMiddleware'
+import Rehydration from '../Services/Rehydration'
+import ReduxPersist from '../Config/ReduxPersist';
 
 
- 
 export default (rootReducer) => {
   /* ------------- Redux Configuration ------------- */
 
@@ -17,7 +18,7 @@ export default (rootReducer) => {
   /* ------------- Analytics Middleware ------------- */
   middleware.push(ScreenTracking)
 
-  
+
 
   /* ------------- Assemble Middleware ------------- */
 
@@ -26,9 +27,12 @@ export default (rootReducer) => {
   // if Reactotron is enabled (default for __DEV__), we'll create the store through Reactotron
   const createAppropriateStore = createStore
   const store = createAppropriateStore(rootReducer, compose(...enhancers))
+  // configure persistStore and check reducer version number
+  if (ReduxPersist.active) {
+    Rehydration.updateReducers(store)
+  }
 
-   
   return {
-    store 
+    store
   }
 }

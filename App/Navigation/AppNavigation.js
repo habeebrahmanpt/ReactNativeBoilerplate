@@ -4,6 +4,7 @@ import { createStackNavigator, createDrawerNavigator } from 'react-navigation'
 
 import HomeScreen from '../src/HomeScreen'
 import TestPage from '../src/TestPage'
+import CounterApp from '../src/CounterApp'
 
 // drawer stack
 // const DrawerStack = createDrawerNavigator({
@@ -21,6 +22,7 @@ import TestPage from '../src/TestPage'
 
 const PrimaryNav = createStackNavigator({
   HomeScreen: { screen: HomeScreen },
+  CounterApp: { screen: CounterApp },
   TestPage: { screen: TestPage },
 }, {
     // Default config for all screens
