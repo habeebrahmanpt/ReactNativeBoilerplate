@@ -37,10 +37,10 @@ class HomeSrceen extends Component {
     }
 
     /**
-     *   Navigate to Add Activity Page 
-     * 
-     * @param {Object} parms 
-     */
+      *   Navigate to Add Activity Page 
+      * 
+      * @param {Object} parms 
+      */
     handlenavigateToReduxCounterExample(parms) {
         this.props.navigation.navigate('CounterApp', parms)
     }
@@ -63,9 +63,7 @@ class HomeSrceen extends Component {
                     color="#841584"
                     accessibilityLabel=" Redux Counter Example"
                 />
-
-
-
+  
             </View>
         );
     }

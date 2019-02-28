@@ -1,21 +1,29 @@
-import React, { PureComponent } from 'react'; 
+import React, { PureComponent } from 'react';
 import { connect } from 'react-redux';
 import { NavigationActions } from "react-navigation";
 import { BackHandler, Alert } from 'react-native'
+
 import {
-    reduxifyNavigator,
-    createReactNavigationReduxMiddleware,
+    createReduxContainer,
+    createReactNavigationReduxMiddleware
 } from 'react-navigation-redux-helpers';
 
-import RootNavigator from './AppNavigation'
+import AppNavigator from './AppNavigation'
 
+
+// Note: createReactNavigationReduxMiddleware must be run before createReduxContainer
 const navigationMiddleware = createReactNavigationReduxMiddleware(
-    'root',
-    state => state.nav
+    state => state.nav,
 );
 
+const App = createReduxContainer(AppNavigator);
+const mapStateToProps = (state) => ({
+    state: state.nav,
+});
+const AppWithNavigationState = connect(mapStateToProps)(App);
 
-const AppWithNavigationState = reduxifyNavigator(RootNavigator, 'root');
+
+
 
 // create nav component
 class ReduxNavigation extends PureComponent {
@@ -61,12 +69,7 @@ class ReduxNavigation extends PureComponent {
     }
 }
 
-
-const mapNavStateProps = state => ({
-    state: state.nav
-});
-
-const AppNavigator = connect(mapNavStateProps)(ReduxNavigation);
+const ReduxNavigationState = connect(mapStateToProps)(ReduxNavigation);
 
 
-export { RootNavigator, AppNavigator, navigationMiddleware };
+export { ReduxNavigationState, AppNavigator, navigationMiddleware };

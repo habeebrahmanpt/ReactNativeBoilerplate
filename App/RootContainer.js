@@ -1,7 +1,8 @@
 import React, { Component } from 'react'
-import { View, StyleSheet, Text } from 'react-native'
-import { Provider, connect } from 'react-redux';
-import { AppNavigator, middleware } from './Navigation/ReduxNavigation'
+import { View } from 'react-native'
+import { connect } from 'react-redux';
+import { ReduxNavigationState } from './Navigation/ReduxNavigation'
+
 /**
  * 
  * ******************* 
@@ -11,12 +12,7 @@ import { AppNavigator, middleware } from './Navigation/ReduxNavigation'
  * ******************* 
  * 
  */
-
-
- 
 class RootContainer extends Component {
-
-
     constructor(props) {
         super(props)
         this.state = {
@@ -24,12 +20,10 @@ class RootContainer extends Component {
         }
     }
 
-
-    
     render() {
         return (
             <View style={{ flex: 1 }}>
-                <AppNavigator />
+                <ReduxNavigationState />
             </View>
         );
     }

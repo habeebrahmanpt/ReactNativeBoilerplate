@@ -1,5 +1,15 @@
 import AppNavigation from '../Navigation/AppNavigation'
 
+
+/**
+ * 
+ *  This class not using and using createNavigationReducer 
+ * function from 'react-navigation-redux-helpers'
+ *  
+ * 
+ */
+
+
 export const reducer = (state, action) => {
   const newState = AppNavigation.router.getStateForAction(action, state)
   return newState || state
