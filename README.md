@@ -1,7 +1,14 @@
-#  #Redux + Reactnavigation + React  Native Template Project 
+#  #Redux +Redux Persist + Reactnavigation + React Native Template Project 
 
 We found out and combined the patterns and libraries to make a robust app that works properly on both platforms: Android and iOS.
 
+
+#  #React Native Redux Shopping Cart and  Counter example
+ 
+Shopping cart with and Redux 
+
+## Redux Persist 
+[Redux Persist](https://github.com/rt2zz/redux-persist) takes your Redux state object and saves it to persisted storage. Then on app launch it retrieves this persisted state and saves it back to redux.
  
 
 ## Get Started

@@ -5,6 +5,7 @@ import { createStackNavigator, createDrawerNavigator } from 'react-navigation'
 import HomeScreen from '../src/HomeScreen'
 import TestPage from '../src/TestPage'
 import CounterApp from '../src/CounterApp'
+import Cart from '../src/cart/Cart'
 
 // drawer stack
 // const DrawerStack = createDrawerNavigator({
@@ -24,6 +25,7 @@ const PrimaryNav = createStackNavigator({
   HomeScreen: { screen: HomeScreen },
   CounterApp: { screen: CounterApp },
   TestPage: { screen: TestPage },
+  Cart: { screen: Cart },
 }, {
     // Default config for all screens
     headerMode: 'none',

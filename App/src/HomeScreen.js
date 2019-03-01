@@ -3,7 +3,7 @@ import {
     View, StyleSheet, Platform, TouchableOpacity,
     Button, Text
 } from 'react-native'
-import { connect } from 'react-redux'
+import { Metrics } from '../Themes';
 
 
 
@@ -46,24 +46,45 @@ class HomeSrceen extends Component {
     }
 
 
+    /**
+      *   Navigate to Add Activity Page 
+      * 
+      * @param {Object} parms 
+      */
+    handlenavigateToReduxCartExample(parms) {
+        this.props.navigation.navigate('Cart', parms)
+    }
+
+
     render() {
         return (
             <View style={styles.container}>
 
-                <TouchableOpacity
-                    onPress={this.handlenavigateToActivity.bind(this, {})}>
+                <Text style={styles.welcome}>Welcome to React Native!</Text>
 
-                    <Text style={styles.welcome}>Welcome to React Native!</Text>
-                    <Text style={styles.instructions}>To get started, edit App.js</Text>
-
-                </TouchableOpacity>
+                <Text style={styles.instructions}>To get started, edit App.js</Text>
+                <View style={{ height: Metrics.section }} />
+                <Button
+                    onPress={this.handlenavigateToActivity.bind(this, {})}
+                    title=" Next page Example"
+                    color="#f7a079"
+                    accessibilityLabel=" Next page Example"
+                />
+                <View style={{ height: Metrics.section }} />
                 <Button
                     onPress={this.handlenavigateToReduxCounterExample.bind(this, {})}
                     title=" Redux Counter Example"
                     color="#841584"
                     accessibilityLabel=" Redux Counter Example"
                 />
-  
+                <View style={{ height: Metrics.section }} />
+                <Button
+                    onPress={this.handlenavigateToReduxCartExample.bind(this, {})}
+                    title=" Redux Cart Example"
+                    color="#01a07a"
+                    accessibilityLabel=" Redux Cart Example"
+                />
+
             </View>
         );
     }

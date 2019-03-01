@@ -1,38 +1,43 @@
-  
+
 
 export default class colors {
- 
- 
-  static backgroundColor = 'white'
-  static salesbackgroundColor = 'white'
-  static recruitingbackgroundColor = 'white'
 
-  static ActivityIndicatorColor = '#00ff00'
+  static statusBarBackground = '#008e6c'
+  static appBarBackground = '#01a07a'
+
+  static white = 'white'
+  static green = '#01a07a'
+
+  static textPrimary = '#3e5363'
+  static textSecondary = '#667d8e'
+  static textPlaceholder = '#9daab4'
+
+
+  static backgroundDart = '#3e5363'
+  static backgroundLight = '#eff2f3'
+  static backgroundWhite = 'white'
+
+  static inactiveBackground = '#b0bdc4'
+  static drawerSelectedBackground = '#f4f5f6'
+
+  static dividerLine = '#e0e5e8'
+
+  static titleBackgroundDart = '#667d8e'
+  static titleBackgroundLight = '#94a4b0'
+  static titleBackgroundWhite = 'white'
+
+  static backgroundPending = '#f7a079'
+  static backgroundPreparing = '#f77979'
+  static backgroundPrepared = '#4cb1db'
+  static backgroundDelivered = '#82c37f'
+
+  static transparent = 'rgba(0,0,0,0)'
+
+  static ActivityIndicatorColor = '#01a07a'
   static background = '#1F0808'
   static clear = 'rgba(0,0,0,0)'
   static facebook = '#3b5998'
-  static transparent = 'rgba(0,0,0,0)'
-  static silver = '#F7F7F7'
-  static steel = '#CCCCCC'
-  static error = 'rgba(200, 0, 0, 0.8)'
-  static ricePaper = 'rgba(255,255,255, 0.75)'
-  static frost = '#D8D8D8'
-  static cloud = 'rgba(200,200,200, 0.35)'
-  static windowTint = 'rgba(0, 0, 0, 0.4)'
-  static panther = '#161616'
-  static charcoal = '#595959'
-  static coal = '#2d2d2d'
-  static bloodOrange = '#fb5f26'
-  static snow = 'white'
-  static ember = 'rgba(164, 0, 48, 0.5)'
-  static fire = '#e73536'
-  static drawer = 'rgba(30, 30, 29, 0.95)'
-  static eggplant = '#251a34'
-  static border = '#483F53'
-  static banner = '#5F3E63'
-  static banner = '#5F3E63'
-  static text = '#E0D7E5'
- 
+
 
 }
 

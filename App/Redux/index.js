@@ -4,6 +4,7 @@ import { AppNavigator } from '../Navigation/ReduxNavigation'
 import createStore from './CreateStore'
 import ReduxPersist from '../Config/ReduxPersist'
 import counterReducer from './Reducers/CounterReducer'
+import CartReducer from './Reducers/CartReducer'
 import {
   createNavigationReducer,
 } from 'react-navigation-redux-helpers';
@@ -19,6 +20,7 @@ export const reducers = combineReducers({
   // nav: require('./NavigationRedux').reducer,
   nav: navReducer,
   counterReducer: counterReducer,
+  cartReducer: CartReducer
 })
 
 export default () => {
