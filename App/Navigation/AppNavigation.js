@@ -1,6 +1,6 @@
 import React from 'react'
 import { Dimensions } from 'react-native'
-import { createStackNavigator, createDrawerNavigator } from 'react-navigation'
+import { createStackNavigator, createDrawerNavigator, createBottomTabNavigator } from 'react-navigation'
 
 import HomeScreen from '../src/HomeScreen'
 import TestPage from '../src/TestPage'
@@ -21,16 +21,25 @@ import Cart from '../src/cart/Cart'
 //     contentComponent: DrawerContent,
 //   })
 
-const PrimaryNav = createStackNavigator({
+
+const BottomStack = createBottomTabNavigator({
   HomeScreen: { screen: HomeScreen },
+  TestPage: { screen: TestPage }
+}, {
+    initialRouteName: 'HomeScreen',
+  })
+
+const PrimaryNav = createStackNavigator({
+  BottomStack: { screen: BottomStack },
+  // HomeScreen: { screen: HomeScreen },
   CounterApp: { screen: CounterApp },
-  TestPage: { screen: TestPage },
+  // TestPage: { screen: TestPage },
   Cart: { screen: Cart },
 }, {
     // Default config for all screens
     headerMode: 'none',
     title: 'HomeScreen',
-    initialRouteName: 'HomeScreen'
+    initialRouteName: 'BottomStack'
   })
 
 export default PrimaryNav
