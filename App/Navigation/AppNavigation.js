@@ -8,32 +8,33 @@ import CounterApp from '../src/CounterApp'
 import Cart from '../src/cart/Cart'
 
 // drawer stack
-// const DrawerStack = createDrawerNavigator({
-//   HomeScreen: { screen: HomeScreen },
-//   TestPage: { screen: TestPage } 
-// }, {
-//     initialRouteName: 'HomeScreen',
-//     drawerWidth: Dimensions.get('window').width / 1.3,
-//     headerMode: 'none',
-//     drawerPosition: 'left',
-//     useNativeAnimations: false,
-//     drawerBackgroundColor: 'transparent',
-//     contentComponent: DrawerContent,
-//   })
-
-
-const BottomStack = createBottomTabNavigator({
+const DrawerStack = createDrawerNavigator({
   HomeScreen: { screen: HomeScreen },
-  TestPage: { screen: TestPage }
+  TestPage: { screen: TestPage } 
 }, {
     initialRouteName: 'HomeScreen',
+    drawerWidth: Dimensions.get('window').width / 1.3,
+    headerMode: 'none',
+    drawerPosition: 'left',
+    useNativeAnimations: false,
+    drawerBackgroundColor: 'transparent',
+    contentComponent: CounterApp,
   })
 
+
+// const BottomStack = createBottomTabNavigator({
+//   HomeScreen: { screen: HomeScreen },
+//   TestPage: { screen: TestPage }
+// }, {
+//     initialRouteName: 'HomeScreen',
+//   })
+
 const PrimaryNav = createStackNavigator({
-  BottomStack: { screen: BottomStack },
-  // HomeScreen: { screen: HomeScreen },
+//   BottomStack: { screen: BottomStack },
+//   DrawerStack: { screen: DrawerStack },
+  HomeScreen: { screen: HomeScreen },
   CounterApp: { screen: CounterApp },
-  // TestPage: { screen: TestPage },
+  TestPage: { screen: TestPage },
   Cart: { screen: Cart },
 }, {
     // Default config for all screens
