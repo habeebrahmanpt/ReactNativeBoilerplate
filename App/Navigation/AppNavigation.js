@@ -1,25 +1,32 @@
 import React from 'react'
 import { Dimensions } from 'react-native'
-import { createStackNavigator, createDrawerNavigator, createBottomTabNavigator } from 'react-navigation'
+import { createBottomTabNavigator } from 'react-navigation'
+import { createStackNavigator } from 'react-navigation-stack';
+// import { createDrawerNavigator } from 'react-navigation-drawer';  // if using this react-native-reanimated  needed 
 
-import HomeScreen from '../src/HomeScreen'
+
+
 import TestPage from '../src/TestPage'
-import CounterApp from '../src/CounterApp'
-import Cart from '../src/cart/Cart'
+import CounterApp from '../src/CounterApp'  
+
+
+import HomeScreen from '../src/HomeScreen' 
+
+
 
 // drawer stack
-const DrawerStack = createDrawerNavigator({
-  HomeScreen: { screen: HomeScreen },
-  TestPage: { screen: TestPage } 
-}, {
-    initialRouteName: 'HomeScreen',
-    drawerWidth: Dimensions.get('window').width / 1.3,
-    headerMode: 'none',
-    drawerPosition: 'left',
-    useNativeAnimations: false,
-    drawerBackgroundColor: 'transparent',
-    contentComponent: CounterApp,
-  })
+// const DrawerStack = createDrawerNavigator({
+//   HomeScreen: { screen: HomeScreen },
+//   TestPage: { screen: TestPage } 
+// }, {
+//     initialRouteName: 'HomeScreen',
+//     drawerWidth: Dimensions.get('window').width / 1.3,
+//     headerMode: 'none',
+//     drawerPosition: 'left',
+//     useNativeAnimations: false,
+//     drawerBackgroundColor: 'transparent',
+//     contentComponent: CounterApp,
+//   })
 
 
 // const BottomStack = createBottomTabNavigator({
@@ -29,13 +36,14 @@ const DrawerStack = createDrawerNavigator({
 //     initialRouteName: 'HomeScreen',
 //   })
 
-const PrimaryNav = createStackNavigator({
-//   BottomStack: { screen: BottomStack },
-//   DrawerStack: { screen: DrawerStack },
-  HomeScreen: { screen: HomeScreen },
+const PrimaryNav = createStackNavigator({ 
   CounterApp: { screen: CounterApp },
   TestPage: { screen: TestPage },
-  Cart: { screen: Cart },
+
+
+
+   
+  HomeScreen: { screen: HomeScreen },
 }, {
     // Default config for all screens
     headerMode: 'none',
