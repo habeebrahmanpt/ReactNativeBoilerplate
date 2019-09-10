@@ -7,11 +7,11 @@ import { createStackNavigator } from 'react-navigation-stack';
 
 
 import TestPage from '../src/TestPage'
-import CounterApp from '../src/CounterApp'  
+import CounterApp from '../src/CounterApp'
 
 
-import HomeScreen from '../src/HomeScreen' 
-
+import HomeScreen from '../src/HomeScreen'
+import Cart from '../src/cart/Cart'
 
 
 // drawer stack
@@ -36,10 +36,10 @@ import HomeScreen from '../src/HomeScreen'
 //     initialRouteName: 'HomeScreen',
 //   })
 
-const PrimaryNav = createStackNavigator({ 
+const PrimaryNav = createStackNavigator({
   CounterApp: { screen: CounterApp },
   TestPage: { screen: TestPage },
-
+  Cart: { screen: Cart },
 
 
    
