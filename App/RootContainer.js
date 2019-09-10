@@ -5,6 +5,7 @@ import { ReduxNavigationState } from './Navigation/ReduxNavigation'
 
 /**
  * 
+import App from './App';
  * ******************* 
  * 
  *   RootContainer Page
